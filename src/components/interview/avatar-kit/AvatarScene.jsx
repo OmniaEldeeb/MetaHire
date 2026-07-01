@@ -41,8 +41,9 @@ function BackgroundPlane({ image }) {
 export function AvatarScene({
   visemes,
   isPlaying,
-  background = "#0f0f15",
-  bgImage = "/textures/youtubeBackground.jpg",
+  // Solid, single-color wall — like a plain company meeting room.
+  background = "#dfe2e8",
+  bgImage = null,
 }) {
   return (
     <Canvas

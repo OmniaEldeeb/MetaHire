@@ -16,7 +16,7 @@ export function Features() {
         <SectionHeading
           eyebrow="Features"
           title="Everything you need to hire well"
-          lead="Real AI across the whole journey — matching, CV analysis, interviews, and posting."
+          lead="Real AI across the whole journey — a 3D-avatar virtual interview, CV analysis and filtration, eye-tracking, and communication & technical scoring."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

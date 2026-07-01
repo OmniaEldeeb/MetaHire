@@ -7,6 +7,10 @@ import {
   MessagesSquare,
   ScanFace,
   AudioWaveform,
+  Video,
+  Eye,
+  ListFilter,
+  ClipboardCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -44,6 +48,12 @@ export interface Feature {
 
 export const FEATURES: Feature[] = [
   {
+    icon: Video,
+    color: "purple",
+    title: "Virtual interview with 3D avatar",
+    body: "Sit across from a lifelike 3D AI interviewer. Candidates rehearse real questions to sharpen up, while companies get an automated first-round screen before anyone books a call.",
+  },
+  {
     icon: Bot,
     color: "purple",
     title: "AI job matching",
@@ -56,10 +66,22 @@ export const FEATURES: Feature[] = [
     body: "Upload a CV and get an instant score with strengths, gaps, and concrete fixes.",
   },
   {
-    icon: MessagesSquare,
+    icon: ListFilter,
+    color: "coral",
+    title: "Automatic CV filtration",
+    body: "For companies: every applicant's CV is screened and ranked against the role automatically, surfacing the strongest candidates and filtering out the rest instantly.",
+  },
+  {
+    icon: ClipboardCheck,
+    color: "green",
+    title: "Communication & technical skills evaluation",
+    body: "Each answer is scored on two axes — how clearly it's communicated and how technically sound it is — so real capability is visible, not just a résumé.",
+  },
+  {
+    icon: Eye,
     color: "amber",
-    title: "Chatbot job posting",
-    body: "Describe the role in plain language; the assistant drafts a complete posting in seconds.",
+    title: "Eye tracking analysis",
+    body: "Gaze and focus are tracked frame by frame during the interview to read attention and composure under pressure.",
   },
   {
     icon: AudioWaveform,
@@ -72,6 +94,12 @@ export const FEATURES: Feature[] = [
     color: "coral",
     title: "Facial expression read",
     body: "Webcam frames gauge engagement and composure, aggregated into the session score.",
+  },
+  {
+    icon: MessagesSquare,
+    color: "amber",
+    title: "Chatbot job posting",
+    body: "Describe the role in plain language; the assistant drafts a complete posting in seconds.",
   },
   {
     icon: Gauge,

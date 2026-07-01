@@ -67,6 +67,45 @@ export function Avatar({
   const { nodes, materials } = useGLTF(modelUrl);
   const group = useRef();
 
+  // ─────────────────────────────────────────────────────────────────────────
+  // Formal-suit look (visual only): recolor the outfit meshes into a plain
+  // dark business suit — navy blazer, matching trousers, dark dress shoes.
+  // This only re-tints existing materials; geometry, skeleton, morph targets
+  // and lip-sync are untouched.
+  // ─────────────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (!materials) return;
+    const jacket = new THREE.Color("#232a3a"); // dark navy blazer
+    const trousers = new THREE.Color("#1c2230"); // matching trousers
+    const shoes = new THREE.Color("#15171c"); // dark leather shoes
+
+    const top = materials.Wolf3D_Outfit_Top;
+    const bottom = materials.Wolf3D_Outfit_Bottom;
+    const footwear = materials.Wolf3D_Outfit_Footwear;
+
+    if (top) {
+      top.map = null;
+      top.color.copy(jacket);
+      top.metalness = 0;
+      top.roughness = 0.72;
+      top.needsUpdate = true;
+    }
+    if (bottom) {
+      bottom.map = null;
+      bottom.color.copy(trousers);
+      bottom.metalness = 0;
+      bottom.roughness = 0.8;
+      bottom.needsUpdate = true;
+    }
+    if (footwear) {
+      footwear.map = null;
+      footwear.color.copy(shoes);
+      footwear.metalness = 0.15;
+      footwear.roughness = 0.5;
+      footwear.needsUpdate = true;
+    }
+  }, [materials]);
+
   const [animation, setAnimation] = useState("Sitting Idle");
 
   // تحميل الأنيميشنز

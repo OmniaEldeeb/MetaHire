@@ -1,6 +1,6 @@
 "use client";
 
-import { ScanFace, AudioWaveform, MessagesSquare } from "lucide-react";
+import { ScanFace, AudioWaveform, MessagesSquare, Eye } from "lucide-react";
 
 const BARS = [0.4, 0.7, 0.45, 0.9, 0.6, 1, 0.5, 0.8, 0.35, 0.7, 0.55, 0.95, 0.5, 0.75, 0.4];
 
@@ -85,6 +85,12 @@ export function SignalReadout() {
           label="Expression"
           value={78}
           color="rgb(var(--green))"
+        />
+        <Meter
+          icon={<Eye className="h-4 w-4" />}
+          label="Eye tracking"
+          value={80}
+          color="rgb(var(--accent))"
         />
       </div>
 

@@ -6,7 +6,6 @@ import {
   Volume2, VolumeX, RotateCcw, AlertCircle, ScanFace,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LiveSignals } from "./live-signals";
 import { InterviewAvatar } from "./interview-avatar";
 import { Countdown } from "./countdown";
 import { interviewTts } from "@/lib/interview/tts";
@@ -145,9 +144,8 @@ export function InterviewRoom({ state, videoRef, onStartRecording, onSubmit }: P
         </div>
       </div>
 
-      {/* ── Q&A + live signals ─────────────────────────────────────────── */}
-      <div className="grid gap-5 lg:grid-cols-[1fr_280px]">
-        {/* Left */}
+      {/* ── Q&A + controls ─────────────────────────────────────────────── */}
+      <div className="mx-auto max-w-2xl">
         <div className="space-y-4">
         {currentQuestion && (
           <div className="rounded-2xl border border-line bg-surface p-6">
@@ -263,15 +261,8 @@ export function InterviewRoom({ state, videoRef, onStartRecording, onSubmit }: P
             report (interview-report.tsx). */}
       </div>
 
-      {/* Right — signals */}
-      <div className="hidden lg:block">
-        <LiveSignals
-          toneScore={state.liveToneScore}
-          toneEmotion={state.liveToneEmotion}
-          faceScore={state.liveFaceScore}
-          faceEmotion={state.liveFaceEmotion}
-        />
-        <div className="mt-3 space-y-1.5 text-[0.65rem] text-faint">
+        {/* Mic / camera status — the signals run quietly in the background. */}
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[0.65rem] text-faint">
           <p className="flex items-center gap-1.5">
             <Mic className="h-3 w-3" />
             {isRecording ? "Recording audio…" : "Microphone ready"}
@@ -281,7 +272,6 @@ export function InterviewRoom({ state, videoRef, onStartRecording, onSubmit }: P
               <MicOff className="h-3 w-3" /> Camera not detected — scoring still active
             </p>
           )}
-        </div>
         </div>
       </div>
     </div>

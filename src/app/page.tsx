@@ -2,6 +2,7 @@ import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { SocialProof } from "@/components/landing/social-proof";
 import { Features } from "@/components/landing/features";
+import { InterviewShowcase } from "@/components/landing/interview-showcase";
 import { ProductDemo } from "@/components/landing/product-demo";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Testimonials } from "@/components/landing/testimonials";
@@ -33,6 +34,7 @@ export default function HomePage() {
         <Hero />
         <SocialProof />
         <Features />
+        <InterviewShowcase />
         <ProductDemo />
         <HowItWorks />
         <Testimonials />

@@ -28,10 +28,11 @@ export function Hero() {
           hired
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-          MetaHire uses real AI to match candidates with jobs, analyze CVs
-          automatically, and help companies create postings in seconds through a
-          conversational chatbot.
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          Step into a virtual interview with a 3D AI avatar — candidates
+          practice and get sharper, companies get an automated first screen. Add
+          instant CV analysis and filtration, and real AI matching, and both
+          sides finally move on evidence, not guesswork.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
